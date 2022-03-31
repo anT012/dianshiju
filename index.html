@@ -5,7 +5,45 @@
 	<title>首页-驭鲛记</title>
 </head>
 <body>
-	<h1>与君初相识</h1>
-	<h1>纪云禾 长意</h1>
+	<div id="dd"></div>
+	<script type="text/javascript">
+		var a = 0;
+		function mm() {
+			//要在div标签中  写入时间	
+			var dd = document.getElementById('dd');
+			//获取系统时间
+			var today = new Date();
+			var year = today.getFullYear();
+			var month = today.getMonth()+1;
+			var day = today.getDate();
+			var hours = today.getHours();
+			var sxw = "AM";
+			if(hours > 12){
+					hours -= 12;
+					sxw = "PM"  ;
+			}
+			var minute = today.getMinutes();
+			var seconds = today.getSeconds();
+
+			//星期几
+			var xqs = today.getDay();
+			var xq = "星期日";
+			switch(xqs){
+				case  0 : xq = "星期日"; break;
+				case  1 : xq = "星期一"; break;
+				case  2 : xq = "星期二"; break;
+				case  3 : xq = "星期三"; break;
+				case  4 : xq = "星期四"; break;
+				case  5 : xq = "星期五"; break;
+				case  6 : xq = "星期六"; break;
+			}
+			dd.innerHTML ="<h2>" +year+"年"+month+"月"+day+"日&nbsp;&nbsp;"+hours+":"+minute+":"+seconds+"&nbsp;&nbsp;"+sxw+"&nbsp;&nbsp;"+xq+"</h2>";
+			a++;
+		}
+		mm();
+		setInterval("mm ()",1000);
+	</script>
+	<h1>电视剧名：与君初相识</h1>
+	<h2>主要人物：纪云禾 长意</h2>
 </body>
 </html>
